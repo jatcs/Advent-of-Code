@@ -1,4 +1,5 @@
-def attempt1():
+
+def attempt1_part1():
     # get numbers from text file
     number_file = open('numbers.txt', 'r')
     # check each number
@@ -14,17 +15,31 @@ def attempt1():
                 print('Product = {}'.format(product))
     number_file.close()
 
-number_file = open('numbers.txt', 'r')
-numbers_list = number_file.read().split()
-number_file.close()
-# print(numbers_list)
+def successful_part1():
+    number_file = open('numbers.txt', 'r')
+    numbers_list = number_file.read().split()
+    number_file.close()
+    # print(numbers_list)
 
-for num1 in numbers_list:
-    for num2 in numbers_list:
-        if int(num1) + int(num2) == 2020:
-            sum = int(num1) + int(num2)
-            product = int(num1) * int(num2)
-            print('Sum Check: {} + {} = {}'.format(num1, num2, sum))
-            print('Product: {} * {} = {}'.format(num1, num2, product))
+    for num1 in numbers_list:
+        for num2 in numbers_list:
+            if int(num1) + int(num2) == 2020:
+                sum = int(num1) + int(num2)
+                product = int(num1) * int(num2)
+                print('Sum Check: {} + {} = {}'.format(num1, num2, sum))
+                print('Product: {} * {} = {}'.format(num1, num2, product))
 
+def part2():
+    number_file = open('numbers_pt2.txt', 'r')
+    numbers_list = number_file.read().split()
+    number_file.close()
+    # print(numbers_list)
 
+    for num1 in numbers_list:
+        for num2 in numbers_list:
+            for num3 in numbers_list:
+                if int(num1) + int(num2) + int(num3) == 2020:
+                    sum = int(num1) + int(num2) + int(num3)
+                    product = int(num1) * int(num2) * int(num3)
+                    print('Sum Check: {} + {} + {} = {}'.format(num1, num2, num3, sum))
+                    print('Product: {} * {} * {} = {}'.format(num1, num2, num3, product))
