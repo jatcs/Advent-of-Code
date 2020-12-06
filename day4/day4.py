@@ -9,40 +9,12 @@ EYE_COLOR = 'ecl'
 PASSPORT_ID = 'pid'
 COUNTRY_ID = 'cid'
 NUM_FIELDS = 8
-SEPARATE_PASSPORTS = '\n\n\n'
-SEPARATE_TERMS = '\n\n'
+SEPARATE_PASSPORTS = '\n\n\n' # 3 because it's usually 2 but I added 1 in the join statement
+SEPARATE_TERMS = '\n\n' # usually 1, becomes 2 because of the 1 I added in the join
 
 with open('passport_data.txt', 'r') as data_file:
-    data_list = []
-    '''
-    for row in data_file:
-        data_list.append(row.strip().split())
-    '''
-    # find each passport (separated by blank line)
-    '''
-    finished = False
-    index = 0
-    while not finished:
-        complete_passport = False
-        print('Data list is currently:', data_list)
-        data_list.append([])
-        while not complete_passport:
-            if data_file.readline() != '\n':
-                data_list[index] += data_file.readline().strip().split()
-            else:
-                complete_passport = True
-        index += 1
-        if not data_file.readline():
-            finished = True
-    '''
-    first_list = '\n'.join(data_file.readlines()).split(SEPARATE_PASSPORTS)
-
-    print(first_list)
-    data_list = first_list
-
-
-    # data_list = data_file.split('\n') # each passport's data
-
+    # store the passports from the file
+    data_list = '\n'.join(data_file.readlines()).split(SEPARATE_PASSPORTS) # each passport's data
     valid_passports_count = 0
     for term in data_list:
         term = term.split()
