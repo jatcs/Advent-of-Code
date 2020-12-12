@@ -46,8 +46,9 @@ def part_1():
             # print('{}: row {}, column {}, seat ID {}.'.format(\
             #    directions_string, current_row_range[0], current_col_range[0], seat_id))
         print('The max seat id is {}.'.format(max(your_seat_ids)))
-part_1()
+# part_1()
 
+# currently unsuccessful :/
 def part_2():
     with open('passports_strings.txt', 'r') as the_file:
         your_seat_ids = [] # store results of boarding passes
