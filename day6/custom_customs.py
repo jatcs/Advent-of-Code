@@ -11,6 +11,8 @@ def total_chars(the_list):
     for a_string in the_list:
         total += len(a_string)
     return total
+
+
 def part_1():
     with open('group_answers_puzzle_input.txt', 'r') as the_file:
         # separate each group into their own string and then split each group -> list
@@ -26,6 +28,7 @@ def part_1():
             clean_group_answers.append(clean_term)
         sum = total_chars(clean_group_answers)
         print('Sum of counts = {}'.format(sum))
+
 
 def part_2():
     # find the number of questions everyone answered yes to
